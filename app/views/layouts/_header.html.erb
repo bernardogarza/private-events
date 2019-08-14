@@ -1,0 +1,8 @@
+<ul>
+    <% if logged_in? %>
+      <li> <%= link_to  "Log Out", sessions_destroy_path, method: :delete %> </li>
+      <%= current_user.user_name %>
+    <% else %>
+      <li><%= link_to  "Log-in", sessions_new_path %></li>
+    <% end %>
+</ul>
