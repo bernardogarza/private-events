@@ -1,7 +1,7 @@
 class EventsController < ApplicationController 
-    before_action :logged_in_user, only: %i[index new create show]
+    before_action :logged_in_user, only: %i[new create show]
     def index
-    
+        @events = Event.all
     end
 
     def new
@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     end
 
     def show
-    
+        @creator = User.find(Event.find(params[:id]).creator_id).user_name
     end
 
     private
