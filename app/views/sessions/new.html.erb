@@ -1,14 +1,12 @@
 <h1>Log-in</h1>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+    <% end %>
+<% end %>
+
 <%= form_for(:session, url: sessions_create_path) do |f| %>
     <%= f.label :email, "Email:" %>
     <%= f.email_field :email %><br>
     <%= f.submit 'Log-in' %>
-<% end %>
-
-<% if flash[:errors] %>
-  <div>       
-    <% flash[:errors].each do |e| %>
-      <p><%= e %></p>
-    <% end %> 
-  </div>
 <% end %>

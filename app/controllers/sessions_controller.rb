@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
             flash[:succsess] = 'Welcome'
             redirect_to root_url
         else
-            flash[:error] = @session.errors.full_messages
+            flash[:errors] = ["Invalid e-mail"]
+            redirect_back(fallback_location: root_path)
         end
     end
 

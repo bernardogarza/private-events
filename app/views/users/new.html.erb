@@ -1,16 +1,15 @@
 <h1>Sign Up</h1>
-<%= form_for(:user, url: users_create_path) do |f| %>
-    <%= f.label :user_name, "User name:" %>
-    <%= f.text_field :user_name %><br>
-    <%= f.label :email, "Email:" %>
-    <%= f.email_field :email %><br>
-    <%= f.submit 'Sign Up' %>
-<% end %>
-
 <% if flash[:errors] %>
   <div>       
     <% flash[:errors].each do |e| %>
       <p><%= e %></p>
     <% end %> 
   </div>
+<% end %>
+<%= form_for(:user, url: users_create_path) do |f| %>
+    <%= f.label :user_name, "User name:" %>
+    <%= f.text_field :user_name %><br>
+    <%= f.label :email, "Email:" %>
+    <%= f.email_field :email %><br>
+    <%= f.submit 'Sign Up' %>
 <% end %>
