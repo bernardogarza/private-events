@@ -1,5 +1,9 @@
-<h1>Index Page</h1>
+<h1>Users</h1>
 
 <% if flash[:success] %>
     <div class="notice"><%= flash[:success] %></div>
+<% end %>
+
+<% User.all.each do |u| %>
+    <li> <%= link_to  "#{u.user_name}", user_path(u.id) %> </li>
 <% end %>
