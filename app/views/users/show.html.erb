@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My Events</h1>
+
+<% @myevents.each do |e| %>
+    <h2>Title:</h2>
+    <h3><%= e.title %></h3>
+    <h2>Location:</h2>
+    <p><%= e.location %></p>
+    <h2>Description:</h2>
+    <p><%= e.description %></p>
+    <h2>Date and time:</h2>
+    <p><%= e.date %></p>
+<% end %>

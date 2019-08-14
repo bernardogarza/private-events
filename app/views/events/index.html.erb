@@ -5,7 +5,7 @@
 <% end %>
 
 <% @events.each do |e| %>
-    <h2>Title:</h2>
+    <h2><%= link_to  "Title:", event_path(e.creator_id) %></h2>
     <h3><%= e.title %></h3>
     <h2>Location:</h2>
     <p><%= e.location %></p>
