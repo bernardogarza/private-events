@@ -1,6 +1,14 @@
 <h1>Create Events</h1>
 
-<%= form_for(:event, url: new_event_path) do |f| %>
+<% if flash[:errors] %>
+  <div>       
+    <% flash[:errors].each do |e| %>
+      <p><%= e %></p>
+    <% end %> 
+  </div>
+<% end %>
+
+<%= form_for(:event, url: events_create_path) do |f| %>
     <%= f.label :title, "Title:" %><br>
     <%= f.text_field :title %><br>
     <%= f.label :description, "Description:" %><br>
@@ -9,5 +17,5 @@
     <%= f.text_field :location %><br>
     <%= f.label :date, "Date:" %><br>
     <%= f.datetime_field :date %><br>
-    <%= f.submit 'Create Event' %>
+    <%= f.submit 'Create Event'%>
 <% end %>
