@@ -5,7 +5,7 @@ class User < ApplicationRecord
     validates :user_name, :email, presence: true
 	before_save :email_down_case
 	
-	has_many :events, class: 'event', foreign_key: 'creator_id'
+	has_many :events, class_name: 'Event', foreign_key: 'creator_id'
     
     def self.new_token
 		SecureRandom.urlsafe_base64
