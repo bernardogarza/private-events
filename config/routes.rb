@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'sessions/new'
   post 'sessions/create'
   delete 'sessions/destroy'
+  resources :events, only: %i[index new create show]
 end

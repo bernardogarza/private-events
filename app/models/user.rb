@@ -3,7 +3,9 @@ class User < ApplicationRecord
     before_create :remember_me
     
     validates :user_name, :email, presence: true
-    before_save :email_down_case
+	before_save :email_down_case
+	
+	has_many :events, class: 'event', foreign_key: 'creator_id'
     
     def self.new_token
 		SecureRandom.urlsafe_base64
