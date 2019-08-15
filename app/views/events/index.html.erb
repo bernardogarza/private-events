@@ -5,12 +5,8 @@
 <% end %>
 
 <% @events.each do |e| %>
-    <h2><%= link_to  "Title:", event_path(e.creator_id) %></h2>
+    <h2><%= link_to  "Title:", event_path(e.id) %></h2>
     <h3><%= e.title %></h3>
-    <h2>Location:</h2>
-    <p><%= e.location %></p>
-    <h2>Description:</h2>
-    <p><%= e.description %></p>
     <h2>Date and time:</h2>
     <p><%= e.date %></p>
 <% end %>
