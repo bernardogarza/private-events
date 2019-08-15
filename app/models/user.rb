@@ -6,7 +6,7 @@ class User < ApplicationRecord
 	before_save :email_down_case
 	
 	has_many :events, class_name: 'Event', foreign_key: 'creator_id'
-	has_many :attended_event, through: :event
+	has_many :attended_event, through: :attendance
     
     def self.new_token
 		SecureRandom.urlsafe_base64
