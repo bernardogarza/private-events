@@ -1,3 +1,6 @@
+.padding{
+    padding: 0 25px;
+}
 .form-container {
     display: flex;
     justify-content: center;
@@ -5,4 +8,13 @@
 
 .form-group {
     width: 500px;
+}
+
+.underline{
+    border-bottom: 1px rgba(209, 209, 209, 0.541) solid;
+    padding-left: 25px;
+}
+
+.users{
+    width: 750px;
 }
