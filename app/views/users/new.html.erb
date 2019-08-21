@@ -1,5 +1,4 @@
 <% provide(:title, 'Sign Up') %>
-<h1>Sign Up</h1>
 <% if flash[:errors] %>
   <div>       
     <% flash[:errors].each do |e| %>
@@ -8,9 +7,14 @@
   </div>
 <% end %>
 <%= form_for(:user, url: users_create_path) do |f| %>
+<div class="form-container">
+  <div class="form-group">
+    <h1>Sign Up</h1>
     <%= f.label :user_name, "User name:" %>
-    <%= f.text_field :user_name %><br>
+    <%= f.text_field :user_name, class: "form-control" %><br>
     <%= f.label :email, "Email:" %>
-    <%= f.email_field :email %><br>
-    <%= f.submit 'Sign Up' %>
+    <%= f.email_field :email, class: "form-control" %><br>
+    <%= f.submit 'Sign Up', class: "btn btn-primary" %>
+  </div>
+</div>
 <% end %>
