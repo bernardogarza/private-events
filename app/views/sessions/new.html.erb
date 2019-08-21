@@ -1,7 +1,9 @@
 <% provide(:title, 'Log-in') %>
 <% if flash[:errors] %>
     <% flash[:errors].each do |e| %>
-        <p><%= e %></p>
+        <div class="alert alert-danger">
+            <p><%= e %></p>
+        </div>
     <% end %>
 <% end %>
 

@@ -2,7 +2,7 @@ class User < ApplicationRecord
     attr_accessor :remember_token
     before_create :remember_me
     
-    validates :user_name, :email, presence: true
+    validates :user_name, :email, presence: true, uniqueness: true
 	before_save :email_down_case
 	
 	has_many :events, class_name: 'Event', foreign_key: 'creator_id'

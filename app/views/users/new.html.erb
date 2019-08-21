@@ -1,10 +1,12 @@
 <% provide(:title, 'Sign Up') %>
 <% if flash[:errors] %>
-  <div>       
-    <% flash[:errors].each do |e| %>
-      <p><%= e %></p>
-    <% end %> 
+<div>       
+  <% flash[:errors].each do |e| %>
+  <div class="alert alert-danger">
+    <p><%= e %></p>
   </div>
+  <% end %> 
+</div>
 <% end %>
 <%= form_for(:user, url: users_create_path) do |f| %>
 <div class="form-container">
