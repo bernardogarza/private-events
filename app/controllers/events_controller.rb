@@ -1,5 +1,5 @@
 class EventsController < ApplicationController 
-    before_action :logged_in_user, only: %i[new create show]
+    before_action :logged_in_user, only: %i[new create]
     def index
         @events = Event.all
         @attended_events = Event.past_events

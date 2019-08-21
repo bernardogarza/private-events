@@ -9,8 +9,20 @@
 <h2>Date and time:</h2>
 <p><%= @creator.date %></p>
 
-<%= form_for(:attendance, url: events_create_path) do |f| %>
-        <%= f.hidden_field :attended_event_id, value: @creator.id %>
-        
+<% if logged_in? %>
+	<% if current_user.attendances.find_by(attended_event_id: @creator.id) %>
+		You are going to attend this event
+	<% else %>	  
+		<%= form_for(:attendance, url: attendances_create_path) do |f| %>
+			<%= f.hidden_field :attended_event_id, value: @creator.id %>
+			<%= f.submit 'Attend' %>
+		<% end %>
+	<% end %>
 <% end %>
-  
+
+<h3>Attendees:</h3>
+<ul>
+	<% @creator.attendees.each do |a| %>
+	<li><%= a.user_name %></li>
+	<% end %>
+</ul>
