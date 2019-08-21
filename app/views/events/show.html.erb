@@ -9,7 +9,8 @@
 <h2>Date and time:</h2>
 <p><%= @creator.date %></p>
 
-<%= form_for(@user) do |f| %>
+<%= form_for(:attendance, url: events_create_path) do |f| %>
+        <%= f.hidden_field :attended_event_id, value: @creator.id %>
         
 <% end %>
   

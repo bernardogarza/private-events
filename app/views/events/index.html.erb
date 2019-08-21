@@ -1,12 +1,22 @@
-<h1>Events</h1>
-
 <% if flash[:success] %>
     <div class="notice"><%= flash[:success] %></div>
 <% end %>
 
-<% @upcoming_events.each do |e| %>
-    <h2><%= link_to  "#{e.title}", event_path(e.id) %></h2>
-    <h2>Date and time:</h2>
-    <p><%= e.date %></p>
+<% if @upcoming_events.any? %>
+    <h1>Upcoming Events</h1>
+    <% @upcoming_events.each do |e| %>
+        <h2><%= link_to  "#{e.title}", event_path(e.id) %></h2>
+        <h2>Date and time:</h2>
+        <p><%= e.date %></p>
+    <% end %>
 <% end %>
 
+<% if @attended_events.any? %>
+    <h1>Past Events</h1>
+
+    <% @attended_events.each do |e| %>
+        <h2><%= link_to  "#{e.title}", event_path(e.id) %></h2>
+        <h2>Date and time:</h2>
+        <p><%= e.date %></p>
+    <% end %>
+<% end %>

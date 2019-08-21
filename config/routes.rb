@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   delete 'sessions/destroy'
   resources :events, only: %i[index new show]
   post 'events/create'
+  post 'attendances/create'
 end
