@@ -1,12 +1,19 @@
-<h1>Log-in</h1>
+<% provide(:title, 'Log-in') %>
 <% if flash[:errors] %>
     <% flash[:errors].each do |e| %>
-        <p><%= e %></p>
+        <div class="alert alert-danger">
+            <p><%= e %></p>
+        </div>
     <% end %>
 <% end %>
 
 <%= form_for(:session, url: sessions_create_path) do |f| %>
-    <%= f.label :email, "Email:" %>
-    <%= f.email_field :email %><br>
-    <%= f.submit 'Log-in' %>
+    <div class="form-container">
+        <div class="form-group">
+            <h1>Log-in</h1>
+            <%= f.label :email, "Email:" %>
+            <%= f.email_field :email, class: "form-control" %><br>
+            <%= f.submit 'Log-in', class: "btn btn-primary" %>
+        </div>
+    </div>
 <% end %>

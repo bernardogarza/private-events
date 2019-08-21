@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class EventTest < ActiveSupport::TestCase
+class AttendancesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

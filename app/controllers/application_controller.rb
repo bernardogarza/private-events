@@ -1,7 +1,9 @@
-class ApplicationController < ActionController::Base
-    include SessionsHelper
+# frozen_string_literal: true
 
-    def logged_in_user
-        redirect_to root_url unless logged_in?
-    end
+class ApplicationController < ActionController::Base
+  include SessionsHelper
+
+  def logged_in_user
+    redirect_to root_url unless logged_in?
+  end
 end
