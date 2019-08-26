@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
-  before_action :logged_in_user, only: %i[new create]
+  before_action :authenticate_user, only: %i[new create]
   def index
     @events = Event.all
     @attended_events = Event.past_events
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @creator = Event.find(params[:id])
+    @event = Event.find(params[:id])
   end
 
   private

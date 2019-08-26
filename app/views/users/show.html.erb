@@ -1,8 +1,36 @@
 <% provide(:title, "#{@user.user_name}'s Events") %>
 <div class="form-container">
-    <div>
-        <h1>My Events</h1>
-        <% @myevents.each do |e| %>
+    <div>        
+        <h1>Upcoming Events</h1>
+        <% @user.events.upcoming_events.each do |e| %>
+            <div class="underline">
+                <h2>Title:</h2>
+                <h3><%= e.title %></h3>
+                <h2>Location:</h2>
+                <p><%= e.location %></p>
+                <h2>Description:</h2>
+                <p><%= e.description %></p>
+                <h2>Date and time:</h2>
+                <p><%= e.date %></p>
+            </div>
+        <% end %>
+        <br>
+        <h1>Past Events</h1>
+        <% @user.events.past_events.each do |e| %>
+            <div class="underline">
+                <h2>Title:</h2>
+                <h3><%= e.title %></h3>
+                <h2>Location:</h2>
+                <p><%= e.location %></p>
+                <h2>Description:</h2>
+                <p><%= e.description %></p>
+                <h2>Date and time:</h2>
+                <p><%= e.date %></p>
+            </div>
+        <% end %>
+        <br>
+        <h1>Attending events</h1>
+        <% @user.attended_events.upcoming_events.each do |e| %>
             <div class="underline">
                 <h2>Title:</h2>
                 <h3><%= e.title %></h3>
@@ -14,34 +42,6 @@
                 <p><%= e.date %></p>
                 <h2>Created at:</h2>
                 <p><%= e.created_at %></p>
-            </div>
-        <% end %>
-        
-        <h1>Upcoming Events</h1>
-        <% @user.attended_events.upcoming_events.each do |e| %>
-            <div class="underline">
-                <h2>Title:</h2>
-                <h3><%= e.title %></h3>
-                <h2>Location:</h2>
-                <p><%= e.location %></p>
-                <h2>Description:</h2>
-                <p><%= e.description %></p>
-                <h2>Date and time:</h2>
-                <p><%= e.date %></p>
-            </div>
-        <% end %>
-        
-        <h1>Past Events</h1>
-        <% @user.attended_events.past_events.each do |e| %>
-            <div class="underline">
-                <h2>Title:</h2>
-                <h3><%= e.title %></h3>
-                <h2>Location:</h2>
-                <p><%= e.location %></p>
-                <h2>Description:</h2>
-                <p><%= e.description %></p>
-                <h2>Date and time:</h2>
-                <p><%= e.date %></p>
             </div>
         <% end %>
     </div>
