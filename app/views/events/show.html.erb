@@ -16,9 +16,11 @@
 			<% if current_user.attendances.find_by(attended_event_id: @event.id) %>
 				<b>You are going to attend this event<br></b>
 			<% else %>	  
-				<%= form_for(:attendance, url: attendances_create_path) do |f| %>
-				<%= f.hidden_field :attended_event_id, value: @event.id %>
-				<%= f.submit 'Attend' %>
+				<% if @event.date > Time.now %>
+					<%= form_for(:attendance, url: attendances_create_path) do |f| %>
+					<%= f.hidden_field :attended_event_id, value: @event.id %>
+					<%= f.submit 'Attend' %>
+				<% end %>
 				<% end %>
 			<% end %>
 		<% end %>

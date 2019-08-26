@@ -11,6 +11,6 @@ class CreateEvents < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :events, :creator_id, unique: true
+    add_index :events, :creator_id
   end
 end
