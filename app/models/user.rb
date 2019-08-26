@@ -39,5 +39,5 @@ class User < ApplicationRecord
   def remember_me
     self.remember_token = User.new_token
     self.remember_digest = User.digest(remember_token)
-    end
+  end
 end
