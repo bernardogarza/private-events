@@ -12,6 +12,21 @@
                 <p><%= e.description %></p>
                 <h2>Date and time:</h2>
                 <p><%= e.date %></p>
+                <% if logged_in? %>
+                    <% unless current_user.id == e.creator.id %>
+                        
+                        <% if current_user.attendances.find_by(attended_event_id: e.id) %>
+                            <b>You are going to attend this event<br></b>
+                        <% else %>	  
+                        <% if e.date > Time.now %>
+                            <%= form_for(:attendance, url: attendances_create_path) do |f| %>
+                            <%= f.hidden_field :attended_event_id, value: e.id %>
+                            <%= f.submit 'Attend' %>
+                    <% end %>
+                    <% end %>
+                    <% end %>
+                <% end %>
+		<% end %>
             </div>
         <% end %>
         <br>
@@ -31,6 +46,22 @@
         <br>
         <h1>Attending events</h1>
         <% @user.attended_events.upcoming_events.each do |e| %>
+            <div class="underline">
+                <h2>Title:</h2>
+                <h3><%= e.title %></h3>
+                <h2>Location:</h2>
+                <p><%= e.location %></p>
+                <h2>Description:</h2>
+                <p><%= e.description %></p>
+                <h2>Date and time:</h2>
+                <p><%= e.date %></p>
+                <h2>Created at:</h2>
+                <p><%= e.created_at %></p>
+            </div>
+        <% end %>
+        <br>
+        <h1>Attended events</h1>
+        <% @user.attended_events.past_events.each do |e| %>
             <div class="underline">
                 <h2>Title:</h2>
                 <h3><%= e.title %></h3>

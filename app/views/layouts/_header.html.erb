@@ -4,7 +4,7 @@
       <li class="nav-item"> <%= link_to  "All Events", events_path, class: "nav-link" %> </li>
       <% if logged_in? %>
         <li class="nav-item"> <%= link_to  "Create Event", new_event_path, class: "nav-link" %> </li>
-        <li class="nav-item"> <%= link_to  "My Events", user_path(current_user.id), class: "nav-link" %> </li>
+        <li class="nav-item"> <%= link_to  "Profile", user_path(current_user.id), class: "nav-link" %> </li>
         <li class="nav-item"> <%= link_to  "Log Out", sessions_destroy_path, method: :delete, class: "nav-link" %> </li>
         <li class="nav-link"> <%= current_user.user_name %> </li>
       <% else %>
