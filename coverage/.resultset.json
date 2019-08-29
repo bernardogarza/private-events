@@ -2,6 +2,8 @@
   "RSpec": {
     "coverage": {
       "/home/naguihw/Desktop/microverse/ruby-in-rails/private-events/spec/features/events_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -42,6 +44,8 @@
         null
       ],
       "/home/naguihw/Desktop/microverse/ruby-in-rails/private-events/spec/rails_helper.rb": [
+        null,
+        null,
         null,
         1,
         1,
@@ -379,15 +383,15 @@
         null,
         null,
         1,
-        44,
+        52,
         0,
-        44,
-        31,
+        52,
+        39,
         null,
         null,
         null,
         1,
-        26,
+        30,
         null,
         null,
         1,
@@ -424,6 +428,8 @@
         null
       ],
       "/home/naguihw/Desktop/microverse/ruby-in-rails/private-events/spec/features/sessions_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -451,6 +457,8 @@
         null
       ],
       "/home/naguihw/Desktop/microverse/ruby-in-rails/private-events/spec/features/users_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -477,6 +485,8 @@
         null
       ],
       "/home/naguihw/Desktop/microverse/ruby-in-rails/private-events/spec/models/event_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -531,14 +541,14 @@
         null
       ],
       "/home/naguihw/Desktop/microverse/ruby-in-rails/private-events/spec/models/user_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
         1,
         1,
-        1,
-        1,
-        null,
+        3,
         null,
         1,
         1,
@@ -546,6 +556,10 @@
         null,
         null,
         1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -574,11 +588,11 @@
         1,
         null,
         1,
-        14,
+        16,
         null,
         null,
         1,
-        14,
+        16,
         null,
         null,
         1,
@@ -589,12 +603,12 @@
         1,
         null,
         1,
-        14,
+        16,
         null,
         null,
         1,
-        10,
-        10,
+        12,
+        12,
         null,
         null
       ],
@@ -639,8 +653,6 @@
         null,
         1,
         5,
-        null,
-        null,
         null,
         null
       ],
@@ -727,6 +739,6 @@
         null
       ]
     },
-    "timestamp": 1566850787
+    "timestamp": 1567098811
   }
 }

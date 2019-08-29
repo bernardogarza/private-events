@@ -68,3 +68,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'hirb'
 
 gem 'simplecov', require: false, group: :test
+
+gem 'faker'

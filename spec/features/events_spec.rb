@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "Events", type: :feature do
+RSpec.feature 'Events', type: :feature do
   context 'Testing events controller' do
     before(:each) do
-      User.create(user_name:'foo', email:'foo@bar.com')
+      User.create(user_name: 'foo', email: 'foo@bar.com')
       visit sessions_new_path
       within('form') do
         fill_in 'Email:', with: 'foo@bar.com'

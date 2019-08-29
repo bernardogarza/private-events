@@ -2,7 +2,7 @@
 
 class Event < ApplicationRecord
   validates :description, :location, :date, presence: true
-  validates :title, uniqueness: true, presence: true
+  validates :title, presence: true
 
   belongs_to :creator, class_name: 'User'
 
