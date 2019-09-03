@@ -13,12 +13,3 @@ class AttendancesController < ApplicationController
     params.require(:attendance).permit(:attended_event_id)
   end
 end
-
-# event = current_user.events.build(event_params)
-# if event.save
-#     flash[:success] = 'Event created!'
-#     redirect_to events_path
-# else
-#     flash[:errors] = event.errors.full_messages
-#     redirect_back(fallback_location: root_path)
-# end

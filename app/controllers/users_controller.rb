@@ -19,13 +19,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @myevents = User.find(params[:id]).events
-    @user = User.find(params[:id])
+    @myevents = set_user.events
+    @user = set_user
   end
 
   private
 
   def user_params
     params.require(:user).permit(:user_name, :email)
+  end
+
+  def set_user
+    User.find(params[:id])
   end
 end

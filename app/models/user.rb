@@ -4,8 +4,13 @@ class User < ApplicationRecord
   attr_accessor :remember_token
   before_create :remember_me
 
-  validates :user_name, :email, presence: true, uniqueness: true
+  validates :user_name, presence: true, uniqueness: true
   before_save :email_down_case
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 
   has_many :events, class_name: 'Event', foreign_key: 'creator_id'
 
@@ -34,5 +39,5 @@ class User < ApplicationRecord
   def remember_me
     self.remember_token = User.new_token
     self.remember_digest = User.digest(remember_token)
-    end
+  end
 end

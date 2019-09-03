@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20_190_821_160_643) do
     t.string 'location'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['creator_id'], name: 'index_events_on_creator_id'
   end
 
   create_table 'users', force: :cascade do |t|
