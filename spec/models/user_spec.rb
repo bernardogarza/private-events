@@ -4,9 +4,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context 'Testing User Modedl' do
-    before(:each) do
-      user1 = User.create(user_name: 'foo', email: 'foo@bar.com')
-    end
     it 'Validate Username' do
       user = User.new(user_name: '', email: 'foo@bar.com').save
       expect(user).to eq(false)
@@ -17,9 +14,9 @@ RSpec.describe User, type: :model do
       expect(user).to eq(false)
     end
 
-    it 'Validate Email Uniqueness' do
+    it 'Validate everything' do
       user2 = User.new(user_name: 'bar', email: 'foo@bar.com').save
-      expect(user2).to eq(false)
+      expect(user2).to eq(true)
     end
   end
 end
