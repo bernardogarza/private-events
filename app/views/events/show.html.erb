@@ -1,0 +1,35 @@
+<% provide(:title, "#{@event.title}") %>
+
+<div class="form-container">
+	<div>
+		<h1>Title:</h1>
+		<h3><%= @event.title %></h3>
+		<h2>Location:</h2>
+		<p><%= @event.location %></p>
+		<h2>Description:</h2>
+		<p><%= @event.description %></p>
+		<h2>Date and time:</h2>
+		<p><%= @event.date %></p>
+		
+		
+		<% if logged_in? %>
+			<% if current_user.attendances.find_by(attended_event_id: @event.id) %>
+				<b>You are going to attend this event<br></b>
+			<% else %>	  
+				<% if @event.date > Time.now %>
+					<%= form_for(:attendance, url: attendances_create_path) do |f| %>
+					<%= f.hidden_field :attended_event_id, value: @event.id %>
+					<%= f.submit 'Attend' %>
+				<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+		<br>
+		<h3>Attendees:</h3>
+		<ul>
+			<% @event.attendees.each do |a| %>
+				<li><%= a.user_name %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>

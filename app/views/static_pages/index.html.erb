@@ -1,0 +1,21 @@
+<% if flash[:success] %>
+    <div class="alert alert-success"><%= flash[:success] %></div>
+<% end %>
+<div class="padding">
+    <div class="form-container">
+        <div class="users">
+            <h1>Users</h1>
+            <% if logged_in? %>  
+                <% User.all.each do |u| %>
+                    <% unless current_user.id == u.id %>
+                        <li> <%= link_to  "#{u.user_name}", user_path(u.id) %> </li>
+                    <% end %>
+                <% end %>
+            <% else %>
+            <% User.all.each do |u| %>
+                <li> <%= link_to  "#{u.user_name}", user_path(u.id) %> </li>
+            <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

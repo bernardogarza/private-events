@@ -1,3 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'static_pages#index'
+  get 'users/new'
+  post 'users/create'
+  get 'user/:id' => 'users#show', as: 'user'
+  get 'sessions/new'
+  post 'sessions/create'
+  delete 'sessions/destroy'
+  resources :events, only: %i[index new show]
+  post 'events/create'
+  post 'attendances/create'
 end
