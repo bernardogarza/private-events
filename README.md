@@ -24,6 +24,12 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
+Seed the DB with faker:
+
+```
+$ rails db:seed
+```
+
 Ready to run the app in a local server:
 
 ```
