@@ -1,6 +1,6 @@
 # Private Events
 
-This is the sample application for Microverse main curriculum
+This application is built with Ruby on Rails. It's an app that allows users to create events, confirm attendance, see upcoming and past events, and see events created by specific users on their profile.
 
 
 ## Authors
@@ -8,6 +8,10 @@ Bernardo Garza Landa - bernardo.g.landa@gmail.com
 
 
 Kalib Hackin - naguihw@gmail.com
+
+## Screenshot
+
+![Private Events](Screenshot.png?raw=true "Private Events")
 
 
 ## Getting started
